@@ -97,7 +97,7 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
 
 // download-btn
 function downloadFile() {
-    const fileUrl = 'project-mcp.ino';
+    const fileUrl = 'files/project-mcp.ino';
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = 'project-mcp.ino';
@@ -112,29 +112,4 @@ window.addEventListener('scroll', function() {
     } else {
         backToTop.style.display = 'none';
     }
-});
-
-//burgermenu
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const icon = document.getElementById('animated-icon');
-    const effect = document.querySelector('.animation-effect');
-
-    icon.addEventListener('click', function() {
-        effect.classList.add('explode');
-        
-        // Remove the class after animation ends to allow re-triggering
-        effect.addEventListener('animationend', function() {
-            effect.classList.remove('explode');
-        });
-    });
 });
