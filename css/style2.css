@@ -266,6 +266,7 @@ input, textarea {
 }
 
 .text-content span, .text-content p { 
+    font-size: 16px;
     margin-bottom: 8px; 
 }
 
@@ -658,15 +659,26 @@ button.flip-btn:hover {
         margin: 0; 
         padding: 10px; 
     }
-    .card-content p {
-        font-size: 14px;
-    }
     .card-content img {
         width: 80px;
         height: auto;
         border-radius: 15%;
         margin: 0 auto;
         margin-bottom: 10px;
+    }
+    .text-content h2 {
+        font-size: 22px; 
+        margin-bottom: 10px; 
+    }
+    
+    .text-content h4 {
+        font-size: 18px; 
+        margin-bottom: 10px; 
+    }
+    
+    .text-content span, .text-content p { 
+        font-size: 14px;
+        margin-bottom: 8px; 
     }
     .skills-category h3 {
         font-size: 24px;
