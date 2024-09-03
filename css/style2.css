@@ -213,6 +213,7 @@ input, textarea {
     align-items: center;
     padding: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
 }
 
 .flip-card-front {
@@ -656,6 +657,10 @@ button.flip-btn:hover {
         flex-wrap: wrap;
         font-size: 14px;
         margin: 0; 
+        padding: 10px; 
+    }
+    .card-content p {
+        font-size: 14px;
     }
     .card-content img {
         width: 80px;
