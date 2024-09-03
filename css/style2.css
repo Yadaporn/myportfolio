@@ -189,7 +189,7 @@ input, textarea {
 .flip-card {
     background-color: transparent;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     height: 400px; 
     perspective: 1000px;
     margin: 0px auto;
@@ -201,6 +201,7 @@ input, textarea {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    padding: auto;
 }
 
 .flip-card-front, .flip-card-back {
@@ -238,14 +239,13 @@ input, textarea {
     gap: 20px; 
     padding: 20px; 
     border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card-content img {
     width: 250px; 
     height: auto;
     border-radius: 25px;
-    margin-right: 50px;
+    margin-right: auto;
 }
 .highlight {
     background-color: #fa897b;
@@ -646,7 +646,7 @@ button.flip-btn:hover {
     }
 
     .flip-card-front, .flip-card-back {
-        padding: 10px;
+        padding: 0px;
     }
     .card-content {
         display: flex;
@@ -656,15 +656,14 @@ button.flip-btn:hover {
         justify-content: center;
         flex-wrap: wrap;
         font-size: 14px;
-        margin: 0; 
+        margin-bottom: 50px; 
         padding: 10px; 
     }
     .card-content img {
         width: 80px;
         height: auto;
         border-radius: 15%;
-        margin: 0 auto;
-        margin-bottom: 10px;
+        margin: 0;
     }
     .text-content h2 {
         font-size: 22px; 
