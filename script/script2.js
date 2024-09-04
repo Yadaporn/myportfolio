@@ -22,55 +22,6 @@ function calculateAge(birthDate) {
 }
 document.getElementById('age').textContent = ` ${calculateAge('2002-05-13')}`;
 
-// openproject1
-// function viewProject(projectId) {
-//     const modal = document.getElementById('projectModal');
-//     const modalTitle = document.getElementById('modalTitle');
-//     const modalDescription = document.getElementById('modalDescription');
-//     const modalImages = document.getElementById('modalImages');
-    
-//     modalImages.innerHTML = '';
-
-//     if (projectId === 'mppn2024') {
-//         modalTitle.textContent = 'MPPN 2024 Application';
-//         modalDescription.textContent = 'Details about the MPPN 2024 Application project.';
-//         modalImages.innerHTML = `
-//             <img src="mppn1.jpg" alt="MPPN 2024 Image 1">
-//             <img src="mppn2.jpg" alt="MPPN 2024 Image 2">
-//             <img src="mppn3.jpg" alt="MPPN 2024 Image 3">
-//         `;
-//     } else if (projectId === 'workshopSattahip') {
-//         modalTitle.textContent = 'Workshop Sattahip Website';
-//         modalDescription.textContent = 'Details about the Workshop Sattahip Website project.';
-//         modalImages.innerHTML = `
-//             <img src="Picture1.png" alt="Workshop Sattahip Image 1">
-//             <img src="Picture2.png" alt="Workshop Sattahip Image 2">
-//             <img src="Picture3.png" alt="Workshop Sattahip Image 3">
-//         `;
-//     } else if (projectId === 'streetLight') {
-//         modalTitle.textContent = 'Street Light Project';
-//         modalDescription.textContent = 'Details about the Street Light project.';
-//         modalImages.innerHTML = `
-//             <img src="pcb.jpg" alt="Street Light Image 1">
-//             <img src="Schematic_streetlight.jpg" alt="Street Light Image 2">
-//         `;
-//     }
-
-//     modal.style.display = 'block';
-// }
-
-// function closeModal() {
-//     const modal = document.getElementById('projectModal');
-//     modal.style.display = 'none';
-// }
-
-// window.onclick = function(event) {
-//     const modal = document.getElementById('projectModal');
-//     if (event.target == modal) {
-//         modal.style.display = 'none';
-//     }
-// }
-
 // openproject2
 document.querySelectorAll('.toggle-btn').forEach(button => {
     button.addEventListener('click', function(e) {
@@ -103,6 +54,13 @@ function downloadFile() {
     link.download = 'project-mcp.ino';
     link.click();
 }
+function downloadFile_pdf() {
+  const fileUrl = 'files/Yadaporn_Resume.pdf';
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = 'portfolio.pdf';
+  link.click();
+}
 
 // btn-top
 window.addEventListener('scroll', function() {
@@ -113,3 +71,45 @@ window.addEventListener('scroll', function() {
         backToTop.style.display = 'none';
     }
 });
+
+// font aboutme
+// function([string1, string2],target id,[color1,color2])    
+consoleText(['Hello World.', 'I am Ploy.', 'Web Developer.', 'Programmer.', 'IT.'], 'text', ['#1A237E', '#D32F2F', '#388E3C', '#F57C00', '#0288D1']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id)
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount)
+      window.setTimeout(function() {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0])
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function() {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount)
+      letterCount += x;
+    }
+  }, 120)
+}
