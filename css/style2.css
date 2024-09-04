@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:700');
+@import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +7,10 @@
 }
 
 .custom-body-class {
-    font-family: 'Arial';
+    font-family: 'Raleway', sans-serif;
     line-height: 1.6;
     background-color: #f5cec7;
-    color: #333;
+    color: hsl(198, 1%, 29%);
 }
 
 .containerhead {
@@ -26,13 +28,13 @@
     float: left;
 }
 .left {
-    width: 15%;
+    width: auto;
 }
 .right {
     width: 10%;
 }
 .middle {
-    width: 75%;
+    width: 80%;
 }
 .rowhead:after {
     content: "";
@@ -122,23 +124,71 @@ nav ul li a:hover {
     font-weight: bold;
     transition: color 0.4s ease-in-out, font-size 0.4s ease-in-out, font-weight 0.4s ease-in-out;
 }
-.mysection {
-    padding: 5%;
-    width: 80%;
+.mysection-about {
+    padding: 2%;
+    width: 74%;
     max-width: 1200px;
     text-align: center;
     background-color: #fff;
-    margin: 40px auto;
+    margin: 50px auto 150px auto;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.mysection-skill {
+    padding: 3%;
+    width: 50%;
+    max-width: 1200px;
+    text-align: center;
+    background-color: #fff;
+    margin: 40px auto 100px auto;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mysection-project {
+    padding: 3%;
+    width: 70%;
+    max-width: 1200px;
+    text-align: center;
+    background-color: #fff;
+    margin: 40px auto 100px auto;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.mysection-contact {
+    padding: 3%;
+    width: 60%;
+    max-width: 1200px;
+    text-align: center;
+    background-color: #fff;
+    margin: 50px auto 150px auto;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project {
-    background-color: #d0e6a5;
+    background-color: #ddddda;
     padding: 20px;
     margin: 20px 0;
     border-radius: 15px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.project h4 {
+    line-height: 1.5;
+    background-image: linear-gradient(
+          transparent 50%,
+          #effce6 50%,
+          #d1ffb0 85%,
+          transparent 85%,
+          transparent 100%
+      );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.project:hover h4 {
+    background-size: 100% 100%;
 }
 
 footer {
@@ -218,12 +268,12 @@ input, textarea {
 }
 
 .flip-card-front {
-    background-color: #d0e6a5;
+    background-color: #ddddda;
     color: #fff;
 }
 
 .flip-card-back {
-    background-color: #d0e6a5;
+    background-color: #ddddda;
     color: #333;
     transform: rotateY(180deg);
 }
@@ -237,19 +287,22 @@ input, textarea {
     display: flex;
     align-items: center;
     gap: 20px; 
-    padding: 20px; 
+    padding: 10px; 
     border-radius: 10px; 
 }
 
 .card-content img {
-    width: 250px; 
+    width: 13em; 
     height: auto;
     border-radius: 25px;
-    margin-right: auto;
+    margin: auto 10px auto 10px;
 }
-.highlight {
-    background-color: #fa897b;
-    border-radius: 15px;
+.apol-text {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #666;
+    margin-top: 10px;
 }
 .text-content {
     flex: 1;
@@ -348,7 +401,9 @@ button.flip-btn:hover {
     gap: 20px;
 }
 
-.skills-category h3 {
+.skills-category h4 {
+    background-color: yellow;
+    font-weight: 900;
     font-size: 28px;
     color: #333;
     margin-bottom: 20px;
@@ -445,12 +500,28 @@ button.flip-btn:hover {
     margin: 0; 
 }
 .bounce {
+    line-height: 1.5;
+    background-image: linear-gradient(
+    transparent 50%,
+    #fcb7af 50%,
+    #ffebb5 55%,
+    #fff3b0 60%,
+    #d4f1b4 65%,
+    #b5e0ff 70%,
+    #d6c3ff 75%,
+    transparent 85%,
+    transparent 100%
+    );
+    font-weight: bold;
+    color:  #694b08;
     display: inline-block;
     animation: bounce 0.5s infinite alternate;
 }
 .shake {
     animation: shake 0.5s ease-in-out;
 }
+
+  
 .btn-top {
     display: none; 
     position: fixed;
@@ -511,7 +582,6 @@ button.flip-btn:hover {
     transition: 0.3s;
 }
 
-/* Animation */
 @keyframes move {
     0% {
         transform: translate(0, 0);
@@ -521,7 +591,6 @@ button.flip-btn:hover {
     }
 }
 
-/* To position the icons in random places */
 .background-icons i:nth-child(1) {
     top: 10%;
     left: 20%;
@@ -552,7 +621,6 @@ button.flip-btn:hover {
         padding: 5px;
         background: none;
     }
-
     .left, .right, .middle {
         width: 100%; 
         float: none;
@@ -592,7 +660,22 @@ button.flip-btn:hover {
         width: 90%;
         margin: 20px auto;
     }
-
+    .mysection-about{
+        width: 80%;
+        margin: 20px auto 50px auto;
+    }
+    .mysection-skill{
+        width: 80%;
+        margin: 20px auto 50px auto;
+    }
+    .mysection-project{
+        width: 80%;
+        margin: 20px auto 50px auto;
+    }
+    .mysection-contact{
+        width: 80%;
+        margin: 20px auto 50px auto;
+    }
     .project {
         padding: 10px;
         margin: 10px 0;
@@ -660,10 +743,28 @@ button.flip-btn:hover {
         padding: 10px; 
     }
     .card-content img {
-        width: 80px;
+        width: 90px;
         height: auto;
-        border-radius: 15%;
-        margin: 0;
+        border-radius: 10%;
+        margin: 20px auto auto auto;
+    }
+    .text-content {
+        flex: 1;
+        color: #333;
+    }
+    .typing-font {
+        font-size:4em;
+        text-align:center;
+        height:100px;
+        width:600px;
+        display:contents;
+        position:absolute;
+        color:white;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin-top: auto;
     }
     .text-content h2 {
         font-size: 22px; 
@@ -711,7 +812,7 @@ button.flip-btn:hover {
 }
 @keyframes bounce {
     0% {
-        transform: translateY(0);
+        transform: translateY(0px);
     }
     100% {
         transform: translateY(-10px);
@@ -723,4 +824,44 @@ button.flip-btn:hover {
     50% { transform: translateX(10px); }
     75% { transform: translateX(-10px); }
     100% { transform: translateX(0); }
+}
+@keyframes abomination1 {
+    0% {
+      content: "H";
+    }
+    10% {
+      content: "Hi";
+    }
+    20% {
+      content: "Hi I";
+    }
+    30% {
+      content: "Hi I'";
+    }
+    40% {
+      content: "Hi I'";
+    }
+    50% {
+      content: "Hi I'm";
+    }
+    60% {
+      content: "Hi I'm P";
+    }
+    70% {
+      content: "Hi I'm Pl";
+    }
+    80% {
+      content: "Hi I'm Plo";
+    }
+    90% {
+      content: "Hi I'm Ploy";
+    }
+    100% {
+      content: "Hi I'm Ploy.";
+    }
+}
+@keyframes animatedBackground {
+    to {
+        background-size: 100% 100%;
+    }
 }
