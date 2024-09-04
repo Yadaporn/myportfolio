@@ -6,7 +6,9 @@
     <title>My Portfolio</title>
     <link rel="icon" href="images/brand.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style2.css">
+    <!-- font-awesome for icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- fancybox for picture -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -64,27 +66,26 @@
           </nav>
     </header>
 
-    <section id="about" class="mysection">
+    <section id="about" class="mysection-about">
         <div class="flip-card" id="flipCard">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="card-content">
-                        <img src="images/239305.jpg" alt="Example Image">
-                        <!-- <img src="images/profile.jpg" alt="Example Image"> -->
+                        <img src="images/profilepic.jpg" alt="Example Image">
                         <div class="text-content">
-                            <h4 class="bounce">👋Ready to help your team!</h4>
-                            <p>You can call me Ploy. Having experience in IT support and web-dev through 
-                                both my internship and university projects. I’m a fast learner, good listener and diligent. Take a look at my other projects below,
-                                and let’s see how we can work together. Thank you for considering me!</p>
-                            
-                            <button class="flip-btn" onclick="flipCard()"><i class="fas fa-fingerprint"></i></button>
+                            <div class='typing-font'><h2 id='text'></h2></div>
+                            <p> Having experience in Web-Dev and IT support through 
+                            both my internship and university projects. I’m a fast learner, good listener and diligent. Take a look at my other projects below,
+                            and let’s see how we can work together. Thank you for considering me!</p>
+                            <button class="flip-btn" onclick="flipCard()" style="font-size: 1rem;"><i class="fas fa-fingerprint"></i></button>
                         </div>
+                        
                     </div>                    
                 </div>
                 <div class="flip-card-back">
                     <div class="card-content">
                         <div class="text-content">
-                            <h2>About Me</h2>
+                            <h2 class="bounce">About Me</h2>
                             <p style="margin-left: 20px; font-weight: bold;">Name: <span style="font-weight: normal;">Yadaporn Ajmontri</span></p>
                             <p style="margin-left: 20px; font-weight: bold;">Date of Birth: <span style="font-weight: normal;">May 13, 2002</span></p>
                             <p style="margin-left: 20px; font-weight: bold;">Age: <span style="font-weight: normal;" id="age"></span></p>
@@ -97,9 +98,11 @@
                 </div>
             </div>
         </div>
-    </section>
+        <p class="apol-text">Apologies if my picture seems a bit too formal.</p>
 
-    <section id="skills" class="mysection">
+    </section>
+    
+    <section id="skills" class="mysection-skill">
         <h2 class="section-title">My Skills</h2>
         <div class="skills-container">
             <div class="skills-category">
@@ -171,14 +174,13 @@
         </div>
     </section>
 
-    <section id="projects" class="mysection">
+    <section id="projects" class="mysection-project">
         <h2 class="section-title">Projects</h2>
-        <div class="project">
-            <h3>MPPN 2024 Application  <i class="fas fa-tree" style="color: #00d084;"></i></h3>
-            <!-- <button onclick="viewProject('mppn2024')">View Project</button> -->
+        <div class="project" >
+            <h4>MPPN 2024 Application  <i class="fas fa-tree" style="color: #00d084;"></i></h4>
             <button class="toggle-btn">View Project</button>
             <div class="project-details">
-                <p>This application is designed for monitoring and quality control in plant life cycles 
+                <p >This application is designed for monitoring and quality control in plant life cycles 
                     using heterogeneous information processing. The project is developed using Dart and C++, 
                     and uses Firebase for several key services."</p>
                 <div class="image-container">
@@ -213,7 +215,7 @@
         </div>
         
         <div class="project">
-            <h3>Workshop Sattahip Website  <i class="fas fa-ship" style="color:#6b5b95;"></i></h3>
+            <h4>Workshop Sattahip Website  <i class="fas fa-ship" style="color:#6b5b95;"></i></h4>
             <button class="toggle-btn">View Project</button>
             <div class="project-details">
                 <p>This is a website project designed to showcase a business's products, which are categorized 
@@ -235,7 +237,7 @@
         
 
         <div class="project">
-            <h3>Street Light  <i class="fas fa-road" style="color: #ffab40;"></i></h3>
+            <h4>Street Light  <i class="fas fa-road" style="color: #ffab40;"></i></h4>
             <button class="toggle-btn">View Project</button>
             <div class="project-details">
                 <p>This project involves an automatic street lighting system that activates the lights when an object 
@@ -253,7 +255,7 @@
                     <source src="images/20221209_043113.mp4" type="video/mp4">
                 </video><br>
                 <p style="font-weight: bold;">source code: 
-                    <button class="download-btn" style="background-color:#6b5b95; border-radius: 20px;" onclick="downloadFile()">
+                    <button style="background-color:#6b5b95; border-radius: 20px;" onclick="downloadFile()">
                         project-mcp.ino
                     </button>
                 </p>
@@ -262,7 +264,7 @@
         </div>
     </section>
 
-    <section id="contact" class="mysection">
+    <section id="contact" class="mysection-contact">
         <h2 class="section-title">Contact Me</h2>
         <a data-mdb-ripple-init class="social-btn" style="background-color: #ff6f61;" href="https://www.facebook.com/urourouro8/" target="_blank">
             <i class="fab fa-facebook-f"></i>
@@ -283,6 +285,9 @@
         <a data-mdb-ripple-init class="social-btn" style="background-color: #00d084;" href="https://line.me/R/ti/p/yada.ajmontri" target="_blank">
             <i class="fab fa-line"></i>
         </a>
+        <button style="background-color:#86a3e3; border-radius: 20px;" onclick="downloadFile_pdf()">
+            Portfolio.pdf
+        </button>
     </section>
     
     <footer>
